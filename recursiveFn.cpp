@@ -59,6 +59,38 @@ int count_digit(int num)
     return count;
 }
 
+int sumDigit(int num) {
+    int sum = 0;
+    if (num != 0) {
+        sum += num%10 + sumDigit(num / 10);
+    }
+    return sum;
+}
+int sum_Digit(int num) {
+    if (num == 0)
+        return 0;
+    return (num % 10 + sum_Digit(num / 10));
+}
+
+int decToBin(int num) {
+    if (num == 0)
+        return 0;
+    else
+        return (num % 2 + 10 * decToBin(num / 2));
+}
+void decimalToBinary(int n)
+{
+    // Base case
+    if (n == 0) {
+        cout << "0";
+        return;
+    }
+ 
+    // Recursive call
+    decimalToBinary(n / 2);
+    cout << n % 2;
+}
+
 int main() {
 
     // int L = 0, R = 25;
