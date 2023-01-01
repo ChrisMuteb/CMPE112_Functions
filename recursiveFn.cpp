@@ -35,17 +35,42 @@ int evenCSInfo(int L, int R){ //This function's problem is -> set L = 11 and R =
 	return evenCSInfo(L+2, R);
 }
 
+int countDigits(int num)
+{
+    static int count = 0;
+
+    if (num > 0)
+    {
+        count++;
+        countDigits(num / 10);
+    }
+    else
+        return count;
+}
+
+int count_digit(int num)
+{
+    static int count = 0;
+    if (num != 0)
+    {
+        count++;
+        count_digit(num / 10);
+    }
+    return count;
+}
 
 int main() {
 
-    int L = 0, R = 25;
-    cout << "Even numbers:";
-    even(L, R);
-    cout << endl;
+    // int L = 0, R = 25;
+    // cout << "Even numbers:";
+    // even(L, R);
+    // cout << endl;
 
-    cout << "Odd numbers:";
-    odd(L, R);
+    // cout << "Odd numbers:";
+    // odd(L, R);
     // evenCSInfo(L, R);
+
+	cout << count_digit(12) << endl;
 
     return 0;
 }
