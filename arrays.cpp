@@ -5,6 +5,7 @@ using namespace std;
 void getNumbers();
 void getMinMaxNumbers();
 void arraySumAvg();
+void searchForKey();
 
 const int sz = 3;
 
@@ -13,7 +14,8 @@ int main(){
     
     // getNumbers();
     // getMinMaxNumbers();
-    arraySumAvg();
+    // arraySumAvg();
+    searchForKey();
 
     return 0;
 }
@@ -73,8 +75,39 @@ void arraySumAvg(){
         sum += x[index];
     }
     average = sum / sz;
+
+    // Display
     cout << "\n------------------------------\n";
     cout << "Sum: " << sum << "\nAvg: " << average << endl;
+}
+
+void searchForKey(){
+    // get 10 numbers from the user
+    int x[sz];
+    for(int index = 0; index < sz; index++){
+        cout << "Enter the element: " << index << " : ";
+        cin >> x[index];
+    }
+
+    // search for the key
+    int key = 0, i = 0;
+    bool flag = false;
+    cout << "Enter the key: ";
+    cin >> key;
+    
+    while(i < sz){
+
+        if(key == x[i]){
+            cout << "Key is found\n";
+            flag = true;
+            break;
+        }
+        i++;
+    }
+
+    if(!flag){
+        cout << "Key is not found\n";
+    }
 }
 
 void exampleFromTheNotes(){
