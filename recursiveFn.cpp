@@ -90,6 +90,28 @@ void decimalToBinary(int n)
     decimalToBinary(n / 2);
     cout << n % 2;
 }
+bool isPrime(int n, int i = 2){
+    // Base cases
+    if(n <= 2)
+        return (n == 2) ? true : false;
+    if(n % i == 0)
+        return false;
+    if(i * i > n)
+        return true;
+    
+    // Check for next divisor
+    return isPrime(n, i+1);
+}
+
+int checkPrime(int i, int num){
+    if(num == 1)
+        return 0;
+    else
+        if(num % i == 0)
+            return 1;
+    else
+        return checkPrime(i+1, num);
+}
 
 int main() {
 
@@ -102,7 +124,14 @@ int main() {
     // odd(L, R);
     // evenCSInfo(L, R);
 
-	cout << count_digit(12) << endl;
+	// cout << count_digit(12) << endl;
+
+    //check for prime number
+    int n = 7;
+    if(checkPrime(2, 3) == 0)
+        cout << "Yes";
+    else 
+        cout << "No";
 
     return 0;
 }
