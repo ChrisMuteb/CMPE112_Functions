@@ -4,6 +4,7 @@ using namespace std;
 
 void getNumbers();
 void getMinMaxNumbers();
+void arraySumAvg();
 
 const int sz = 3;
 
@@ -11,7 +12,8 @@ int main(){
 
     
     // getNumbers();
-    getMinMaxNumbers();
+    // getMinMaxNumbers();
+    arraySumAvg();
 
     return 0;
 }
@@ -54,6 +56,25 @@ void getMinMaxNumbers(){
     
     cout << "\n------------------------------\n";
     cout << "Min: " << min << "\nMax: " << max << endl;
+}
+
+void arraySumAvg(){
+    // get 10 numbers from the user
+    int x[sz];
+    for(int index = 0; index < sz; index++){
+        cout << "Enter the element: " << index << " : ";
+        cin >> x[index];
+    }
+
+    // calculate the summation and average
+    int sum = 0;
+    float average = 0.0;
+    for(int index = 0; index < sz; index++){
+        sum += x[index];
+    }
+    average = sum / sz;
+    cout << "\n------------------------------\n";
+    cout << "Sum: " << sum << "\nAvg: " << average << endl;
 }
 
 void exampleFromTheNotes(){
