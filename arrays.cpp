@@ -6,6 +6,7 @@ void getNumbers();
 void getMinMaxNumbers();
 void arraySumAvg();
 void searchForKey();
+void getNameSurname();
 
 const int sz = 3;
 
@@ -15,7 +16,8 @@ int main(){
     // getNumbers();
     // getMinMaxNumbers();
     // arraySumAvg();
-    searchForKey();
+    // searchForKey();
+    getNameSurname();
 
     return 0;
 }
@@ -107,6 +109,21 @@ void searchForKey(){
 
     if(!flag){
         cout << "Key is not found\n";
+    }
+}
+
+void getNameSurname(){
+    string fullName[2];
+
+    for(int i = 0; i < 2; i++){
+        cout << "\nEnter your " << i+1 << " name: ";
+        cin >> fullName[i];
+    }
+
+    // Display
+    cout << "\n------------------------------\n";
+    for(int i = 0; i < 2; i++){
+        cout << fullName[i] << " ";
     }
 }
 
